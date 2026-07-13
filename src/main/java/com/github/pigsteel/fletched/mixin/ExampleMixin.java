@@ -1,6 +1,6 @@
-package com.example.modtemplate.mixin;
+package com.github.pigsteel.fletched.mixin;
 
-import com.example.modtemplate.ModTemplate;
+import com.github.pigsteel.fletched.Fletched;
 import dev.kikugie.fletching_table.annotation.MixinEnvironment;
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,7 +14,7 @@ public class ExampleMixin {
 
 	@Inject(method = "loadLevel", at = @At("RETURN"))
 	private void afterLoadLevel(CallbackInfo ci) {
-		ModTemplate.LOGGER.info("Level Loaded!");
+		Fletched.LOGGER.info("Level Loaded!");
 	}
 
 }

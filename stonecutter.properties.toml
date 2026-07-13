@@ -1,26 +1,22 @@
-mod.id = "modtemplate"
-mod.name = "Mod Template"
-mod.group = "com.example"
+mod.id = "fletched"
+mod.name = "Fletched!"
+mod.group = "com.github.pigsteel"
 mod.version = "0.1.0"
-mod.channel_tag = "-alpha.2"
-mod.description = "Example Description"
-mod.authors = ["AuthorName", "AnotherAuthorName"]
-mod.contributors = ["ContributorName", "AnotherContributorName"]
-mod.inception_year = "2025"
+mod.channel_tag = ""
+mod.description = "Several new bow types, balance changes to archery, use of the fletching table, and several new arrow types. Tipped arrows are amended."
+mod.authors = ["pigsteel"]
+mod.contributors = []
+mod.inception_year = "2026"
 mod.license.name = "MIT"
 mod.license.url = "https://opensource.org/licenses/MIT"
 mod.license.dist = "repo"
-mod.sources_url = "https://github.com/rotgruengelb/stonecutter-mod-template"
-mod.homepage_url = "https://github.com/rotgruengelb/stonecutter-mod-template"
-mod.issues_url = "https://github.com/rotgruengelb/stonecutter-mod-template/issues"
-mod.discord_url = "https://discord.gg/aunYJB4wz9"
+mod.sources_url = "https://github.com/pigsteel/Fletched"
+mod.homepage_url = "https://modrinth.com/mod/fletched"
+mod.issues_url = "https://github.com/pigsteel/Fletched/issues"
+mod.discord_url = "https://discord.gg/ZECxBsZ9x7"
 [[mod.pom.developers]]
-id = "authorname"
-name = "AuthorName"
-url = "https://github.com/ghost"
-[[mod.pom.developers]]
-id = "anotherauthorname"
-name = "AnotherAuthorName"
+id = "pigsteel"
+name = "pigsteel"
 url = "https://github.com/ghost"
 
 [fabric]

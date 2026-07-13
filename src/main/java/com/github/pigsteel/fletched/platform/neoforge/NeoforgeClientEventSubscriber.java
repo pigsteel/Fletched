@@ -1,8 +1,8 @@
-package com.example.modtemplate.platform.neoforge;
+package com.github.pigsteel.fletched.platform.neoforge;
 
 //? neoforge {
 
-/*import com.example.modtemplate.ModTemplate;
+import com.github.pigsteel.fletched.ModTemplate;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -15,4 +15,4 @@ public class NeoforgeClientEventSubscriber {
 		ModTemplate.onInitializeClient();
 	}
 }
-*///?}
+//?}

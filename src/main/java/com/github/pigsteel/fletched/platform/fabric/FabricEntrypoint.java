@@ -1,8 +1,8 @@
-package com.example.modtemplate.platform.fabric;
+package com.github.pigsteel.fletched.platform.fabric;
 
 //? fabric {
 
-import com.example.modtemplate.ModTemplate;
+/*import com.github.pigsteel.fletched.Fletched;
 import dev.kikugie.fletching_table.annotation.fabric.Entrypoint;
 import net.fabricmc.api.ModInitializer;
 
@@ -11,8 +11,8 @@ public class FabricEntrypoint implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModTemplate.onInitialize();
+		Fletched.onInitialize();
 		FabricEventSubscriber.registerEvents();
 	}
 }
-//?}
+*///?}

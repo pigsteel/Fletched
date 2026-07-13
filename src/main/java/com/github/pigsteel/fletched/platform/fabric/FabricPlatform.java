@@ -1,8 +1,8 @@
-package com.example.modtemplate.platform.fabric;
+package com.github.pigsteel.fletched.platform.fabric;
 
 //? fabric {
 
-import com.example.modtemplate.platform.Platform;
+/*import com.github.pigsteel.fletched.platform.Platform;
 import net.fabricmc.loader.api.FabricLoader;
 
 public class FabricPlatform implements Platform {
@@ -27,4 +27,4 @@ public class FabricPlatform implements Platform {
 		return FabricLoader.getInstance().isDevelopmentEnvironment();
 	}
 }
-//?}
+*///?}
