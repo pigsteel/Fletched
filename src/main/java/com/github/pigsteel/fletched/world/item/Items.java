@@ -3,11 +3,17 @@ package com.github.pigsteel.fletched.world.item;
 import com.github.pigsteel.fletched.Fletched;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
+//? neoforge {
+import net.neoforged.bus.EventBus;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+//?}
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -15,24 +21,44 @@ import java.util.function.Supplier;
 public class Items {
 	//? neoforge {
 	// OUR NEOFORGE REGISTRY
-	public static DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, "fletched");
+	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Fletched.MOD_ID);
 	//?}
-	public static Supplier<Item> LONGBOW = registerItem(
-		ResourceKey.create(BuiltInRegistries.ITEM.key(), Fletched.id("longbow")),
-			LongbowItem::new,
-		new Properties().stacksTo(1).durability(384)
-	);
 
-	private static Supplier<Item> registerItem(final ResourceKey<Item> id, final Function<Properties, Item> itemFactory, final Properties properties) {
-		Item item = (Item)itemFactory.apply(properties.setId(id));
-		if (item instanceof BlockItem blockItem) {
-			blockItem.registerBlocks(Item.BY_BLOCK, item);
-		}
+	public static final Supplier<Item> LONGBOW;
+	public static final Supplier<Item> SHORTBOW;
+	public static final Supplier<Item> HEAVY_CROSSBOW;
 
-		return Registry.register(BuiltInRegistries.ITEM, id, item);
+	// Replacing registryHandle with Supplier because I'm not sure what the id is used for
+	public static <T extends Item> Supplier<T> registerItem(String name, Function<Item.Properties, T> itemFactory) {
+		//? neoforge {
+		return ITEMS.registerItem(
+				name,
+				itemFactory
+		);
+		//?} fabric {
+		/*ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Fletched.id(name));
+		Identifier id = key.identifier();
+		T registered = Registry.register(BuiltInRegistries.ITEM, id, itemFactory.apply(new Item.Properties().setId(key)));
+		return () -> registered;
+		*///?}
 	}
 
-	private static void method() {
-		ITEMS.register("longbow", LONGBOW);
+	static {
+		LONGBOW = registerItem(
+				"longbow",
+				properties -> new LongbowItem(properties.stacksTo(1).durability(384))
+		);
+		SHORTBOW = registerItem(
+				"shortbow",
+				properties -> new ShortbowItem(properties.stacksTo(1).durability(256))
+		);
+		HEAVY_CROSSBOW = registerItem(
+				"heavy_crossbow",
+				properties -> new HeavyCrossbowItem(properties.stacksTo(1).durability(600))
+		);
+	}
+
+	public static void init() {
+		Fletched.LOGGER.debug("Initializing Fletched items!");
 	}
 }

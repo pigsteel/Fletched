@@ -1,0 +1,6 @@
+{
+  "parent": "fletched:item/shortbow",
+  "textures": {
+    "layer0": "fletched:item/shortbow_pulling_1"
+  }
+}

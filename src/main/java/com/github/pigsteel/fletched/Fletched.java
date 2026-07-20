@@ -2,6 +2,7 @@ package com.github.pigsteel.fletched;
 
 import com.github.pigsteel.fletched.platform.Platform;
 
+import com.github.pigsteel.fletched.world.item.Items;
 import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,9 +11,7 @@ import org.slf4j.LoggerFactory;
 /*import com.github.pigsteel.fletched.platform.fabric.FabricPlatform;
 *///?} neoforge {
 import com.github.pigsteel.fletched.platform.neoforge.NeoforgePlatform;
- //?} forge {
-/*import com.github.pigsteel.fletched.platform.forge.ForgePlatform;
- *///?}
+ //?}
 
 @SuppressWarnings("LoggingSimilarMessage")
 public class Fletched {
@@ -27,6 +26,7 @@ public class Fletched {
 	public static void onInitialize() {
 		LOGGER.info("Initializing {} on {}", MOD_ID, Fletched.xplat().loader());
 		LOGGER.debug("{}: { version: {}; friendly_name: {} }", MOD_ID, MOD_VERSION, MOD_FRIENDLY_NAME);
+		Items.init();
 	}
 
 	public static void onInitializeClient() {
@@ -43,7 +43,7 @@ public class Fletched {
 		/*return new FabricPlatform();
 		*///?} neoforge {
 		return new NeoforgePlatform();
-		 //?}
+		//?}
 	}
 
 	public static Identifier id(String path) {

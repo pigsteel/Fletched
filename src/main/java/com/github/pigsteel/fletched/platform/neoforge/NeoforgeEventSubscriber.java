@@ -11,11 +11,5 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 @EventBusSubscriber
 public class NeoforgeEventSubscriber {
 
-	@SubscribeEvent // sample_content
-	public static void onPlayerDamage(LivingDamageEvent.Post event) { // sample_content
-		if (event.getEntity() instanceof ServerPlayer player && event.getNewDamage() > 0) { // sample_content
-			ExampleEventHandler.onPlayerHurt(player); // sample_content
-		} // sample_content
-	} // sample_content
 }
 //?}

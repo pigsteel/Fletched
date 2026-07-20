@@ -115,7 +115,7 @@ PROPS_FILE = ROOT / "stonecutter.properties.toml"
 if not PROPS_FILE.exists():
     abort("Run this script from the root of the stonecutter-mod-template repository.")
 
-if 'mod.id = "modtemplate"' not in read(PROPS_FILE):
+if 'mod.id = "Fletched"' not in read(PROPS_FILE):
     warn("stonecutter.properties.toml no longer contains the default mod.id.")
     confirm = ask(
         "Setup may have already been run. Continue anyway? [y/N]", default="N"
@@ -163,9 +163,9 @@ discord_url = ask("Discord invite URL", optional=True)
 modrinth_id = ask("Modrinth project ID", optional=True)
 curseforge_id = ask("CurseForge project ID", optional=True)
 
-old_pkg = "com/example/modtemplate"
+old_pkg = "com/example/Fletched"
 new_pkg = mod_group.replace(".", "/") + f"/{mod_id}"
-old_java_pkg = "com.example.modtemplate"
+old_java_pkg = "com.example.Fletched"
 new_java_pkg = f"{mod_group}.{mod_id}"
 
 print()
@@ -224,14 +224,14 @@ write(PROPS_FILE, new_props)
 
 # Mixin config file
 
-mixin_old = ROOT / "src/main/resources/modtemplate.mixins.json"
+mixin_old = ROOT / "src/main/resources/Fletched.mixins.json"
 mixin_new = ROOT / f"src/main/resources/{mod_id}.mixins.json"
 
 if mixin_old.exists():
     info("Renaming mixin config ...")
     mixin_old.rename(mixin_new)
     replace_in_file(
-        mixin_new, '"com.example.modtemplate.mixin"', f'"{new_java_pkg}.mixin"'
+        mixin_new, '"com.example.Fletched.mixin"', f'"{new_java_pkg}.mixin"'
     )
 
 # pack.mcmeta
@@ -256,7 +256,7 @@ if old_pkg != new_pkg and old_java_root.exists():
     for java_file in new_java_root.rglob("*.java"):
         replace_in_file(java_file, old_java_pkg, new_java_pkg)
 
-    shutil.rmtree(ROOT / "src/main/java/com/example/modtemplate")
+    shutil.rmtree(ROOT / "src/main/java/com/example/Fletched")
     for empty_dir in [ROOT / "src/main/java/com/example", ROOT / "src/main/java/com"]:
         if empty_dir.exists() and not any(empty_dir.iterdir()):
             empty_dir.rmdir()

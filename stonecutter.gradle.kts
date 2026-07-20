@@ -35,7 +35,7 @@ stonecutter parameters {
 	swaps["mod_name"] = "\"${properties.get<String>("mod.name")}\";"
 	swaps["mod_group"] = "\"${properties.get<String>("mod.group")}\";"
 	swaps["minecraft"] = "\"${current.version}\";"
-	constants["release"] = properties.get<String>("mod.id") != "modtemplate"
+	constants["release"] = properties.get<String>("mod.id") != "Fletched"
 }
 
 for (version in stonecutter.versions.map { it.version }.distinct()) tasks.register("publish$version") {

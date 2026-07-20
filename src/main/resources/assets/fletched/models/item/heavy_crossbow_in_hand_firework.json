@@ -1,0 +1,6 @@
+{
+  "parent": "fletched:item/heavy_crossbow_in_hand",
+  "textures": {
+    "layer0": "fletched:item/heavy_crossbow_in_hand_firework"
+  }
+}

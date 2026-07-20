@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "modtemplate:lava_chicken_recipe"
+        "recipe": "Fletched:lava_chicken_recipe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "modtemplate:lava_chicken_recipe"
+      "Fletched:lava_chicken_recipe"
     ]
   }
 }

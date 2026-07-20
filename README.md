@@ -51,7 +51,7 @@ Edit `stonecutter.properties.toml` to set your mod's metadata:
 
 | Property           | Description                                  | Example                                                           |
 |--------------------|----------------------------------------------|-------------------------------------------------------------------|
-| `mod.id`           | Your mod's identifier (lowercase, no spaces) | `modtemplate`                                                     |
+| `mod.id`           | Your mod's identifier (lowercase, no spaces) | `Fletched`                                                     |
 | `mod.name`         | Display name of your mod                     | `Mod Template`                                                    |
 | `mod.group`        | Java package group                           | `com.example`                                                     |
 | `mod.version`      | Mod version number                           | `0.1.0`                                                           |
@@ -71,14 +71,14 @@ e.g. `[fabric."1.21.7"]`.
 
 #### 5. **Rename package structure**
 
-Rename the `com.example.modtemplate` package in
+Rename the `com.example.Fletched` package in
 `src/main/java/` to match your `mod.group` and `mod.id`.
 
 #### 6. **Update resource files**
 
 Rename these files to match your `mod.id`:
 
-* `src/main/resources/modtemplate.mixins.json`
+* `src/main/resources/Fletched.mixins.json`
 
 Replace `src/main/resources/assets/icon.png` and `.idea/icon.png` with your mod's icon.
 
@@ -126,8 +126,8 @@ Be careful to run the correct task for the selected Stonecutter platform and Min
 
 The template uses a platform abstraction pattern to keep shared code loader-agnostic:
 
-* **Shared code** goes in `com.example.modtemplate` (no platform dependencies)
-* **Platform-specific code** goes in `com.example.modtemplate.platform.{fabric|neoforge|forge}`
+* **Shared code** goes in `com.example.Fletched` (no platform dependencies)
+* **Platform-specific code** goes in `com.example.Fletched.platform.{fabric|neoforge|forge}`
 * The `Platform` interface provides loader-specific functionality to shared code
 
 ### Adding Dependencies

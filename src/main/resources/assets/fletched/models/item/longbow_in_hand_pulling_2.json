@@ -1,0 +1,6 @@
+{
+  "parent": "fletched:item/longbow_in_hand",
+  "textures": {
+    "layer0": "fletched:item/longbow_in_hand_pulling_2"
+  }
+}
