@@ -35,14 +35,14 @@
                     "type": "minecraft:model",
                     "model": "fletched:item/heavy_crossbow_pulling_1"
                   },
-                  "threshold": 0.58
+                  "threshold": 1.16
                 },
                 {
                   "model": {
                     "type": "minecraft:model",
                     "model": "fletched:item/heavy_crossbow_pulling_2"
                   },
-                  "threshold": 1.0
+                  "threshold": 2.0
                 }
               ],
               "fallback": {
@@ -95,14 +95,14 @@
                 "type": "minecraft:model",
                 "model": "fletched:item/heavy_crossbow_in_hand_pulling_1"
               },
-              "threshold": 0.58
+              "threshold": 1.16
             },
             {
               "model": {
                 "type": "minecraft:model",
                 "model": "fletched:item/heavy_crossbow_in_hand_pulling_2"
               },
-              "threshold": 1.0
+              "threshold": 2.0
             }
           ],
           "fallback": {

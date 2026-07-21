@@ -10,10 +10,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jspecify.annotations.NonNull;
 
 import java.util.List;
 
-public class ShortbowItem extends BowItem {
+public class ShortbowItem extends BowItem implements DrawDuration, ZoomModifier {
 	public static final int MAX_DRAW_DURATION = 10;
 
 	public ShortbowItem(Properties properties) {
@@ -21,7 +22,7 @@ public class ShortbowItem extends BowItem {
 	}
 
 	@Override
-	public boolean releaseUsing(final ItemStack itemStack, final Level level, final LivingEntity entity, final int remainingTime) {
+	public boolean releaseUsing(final @NonNull ItemStack itemStack, final @NonNull Level level, final @NonNull LivingEntity entity, final int remainingTime) {
 		if (entity instanceof Player player) {
 			ItemStack projectile = player.getProjectile(itemStack);
 			if (projectile.isEmpty()) {
@@ -33,8 +34,7 @@ public class ShortbowItem extends BowItem {
 					return false;
 				} else {
 					List<ItemStack> firedProjectiles = draw(itemStack, projectile, player);
-					if (level instanceof ServerLevel) {
-						ServerLevel serverLevel = (ServerLevel)level;
+					if (level instanceof ServerLevel serverLevel) {
 						if (!firedProjectiles.isEmpty()) {
 							this.shoot(serverLevel, player, player.getUsedItemHand(), itemStack, firedProjectiles, pow * 2F, 1F, pow >= 0.5F, (LivingEntity)null);
 						}
@@ -58,5 +58,15 @@ public class ShortbowItem extends BowItem {
 		}
 
 		return pow;
+	}
+
+	@Override
+	public float fletched$getDrawDuration(ItemStack stack, LivingEntity user) {
+		return MAX_DRAW_DURATION;
+	}
+
+	@Override
+	public float fletched$getZoomModifier(ItemStack stack, LivingEntity user) {
+		return 0.2F;
 	}
 }

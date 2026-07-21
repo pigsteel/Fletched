@@ -2,7 +2,7 @@ package com.github.pigsteel.fletched.platform.neoforge;
 
 //? neoforge {
 
-import com.github.pigsteel.fletched.Fletched;
+/*import com.github.pigsteel.fletched.Fletched;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -15,4 +15,4 @@ public class NeoforgeClientEventSubscriber {
 		Fletched.onInitializeClient();
 	}
 }
-//?}
+*///?}

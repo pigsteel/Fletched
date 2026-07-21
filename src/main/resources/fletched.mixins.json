@@ -6,6 +6,13 @@
   "injectors": {
     "defaultRequire": 1
   },
-  "mixins": [],
-  "client": []
+  "mixins": [
+    "RecipeBookTypeMixin"
+  ],
+  "client": [
+    "client.AbstractClientPlayerMixin",
+    "client.AvatarRendererMixin",
+    "client.HumanoidMobRendererMixin",
+    "client.ItemInHandRendererMixin"
+  ]
 }

@@ -13,7 +13,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class LongbowItem extends BowItem {
+public class LongbowItem extends BowItem implements DrawDuration, ZoomModifier {
 	public static final int MAX_DRAW_DURATION = 40;
 
 	public LongbowItem(Properties properties) {
@@ -33,8 +33,7 @@ public class LongbowItem extends BowItem {
 					return false;
 				} else {
 					List<ItemStack> firedProjectiles = draw(itemStack, projectile, player);
-					if (level instanceof ServerLevel) {
-						ServerLevel serverLevel = (ServerLevel)level;
+					if (level instanceof ServerLevel serverLevel) {
 						if (!firedProjectiles.isEmpty()) {
 							this.shoot(serverLevel, player, player.getUsedItemHand(), itemStack, firedProjectiles, pow * 6.0F, 0F, pow == 1.0F, (LivingEntity)null);
 						}
@@ -58,5 +57,15 @@ public class LongbowItem extends BowItem {
 		}
 
 		return pow;
+	}
+
+	@Override
+	public float fletched$getDrawDuration(ItemStack stack, LivingEntity user) {
+		return MAX_DRAW_DURATION;
+	}
+
+	@Override
+	public float fletched$getZoomModifier(ItemStack stack, LivingEntity user) {
+		return 2.0F;
 	}
 }

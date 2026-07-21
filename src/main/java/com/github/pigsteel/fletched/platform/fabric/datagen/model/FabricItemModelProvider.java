@@ -1,7 +1,7 @@
 package com.github.pigsteel.fletched.platform.fabric.datagen.model;
 
 //? fabric {
-/*import com.github.pigsteel.fletched.world.item.Items;
+import com.github.pigsteel.fletched.world.item.Items;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
@@ -25,4 +25,4 @@ public class FabricItemModelProvider extends FabricModelProvider {
 	}
 }
 
-*///?}
+//?}

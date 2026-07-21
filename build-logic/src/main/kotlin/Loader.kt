@@ -25,7 +25,7 @@ sealed class Loader(val id: String) {
 	sealed class FabricLike(id: String) : Loader(id) {
 		override val isFabricLike = true
 		override val excludedResources = listOf(
-			"META-INF/mods.toml", "META-INF/neoforge.mods.toml", "aw/*.cfg", ".cache", "pack.mcmeta"
+			"META-INF/mods.toml", "META-INF/enum/*.json", "META-INF/neoforge.mods.toml", "aw/*.cfg", ".cache", "pack.mcmeta"
 		)
 
 		override fun generateManifest(ctx: Context): String {
@@ -124,7 +124,8 @@ sealed class Loader(val id: String) {
 				),
 				dependencies = mapOf(ctx.modId to forgeDeps),
 				mixins = listOf(ForgeMixin("${ctx.modId}.mixins.json")),
-				accessTransformers = listOf(ForgeAccessTransformer("aw/${ctx.stonecutter.current.version}.cfg"))
+				accessTransformers = listOf(ForgeAccessTransformer("aw/${ctx.stonecutter.current.version}.cfg")),
+				enumExtensions = listOf(ForgeEnumExtension("enum/${ctx.stonecutter.current.version}.json"))
 			)
 
 			return TOML.encodeToString(manifest)
