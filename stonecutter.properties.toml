@@ -1,7 +1,7 @@
 mod.id = "fletched"
 mod.name = "Fletched!"
 mod.group = "com.github.pigsteel"
-mod.version = "0.1.0"
+mod.version = "0.1.0-alpha"
 mod.channel_tag = ""
 mod.description = "Several new bow types, balance changes to archery, use of the fletching table, and several new arrow types. Tipped arrows are amended."
 mod.authors = ["pigsteel"]

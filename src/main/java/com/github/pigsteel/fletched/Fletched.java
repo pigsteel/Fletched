@@ -17,7 +17,7 @@ import com.github.pigsteel.fletched.platform.neoforge.NeoforgePlatform;
 public class Fletched {
 
 	public static final String MOD_ID = /*$ mod_id*/ "fletched";
-	public static final String MOD_VERSION = /*$ mod_version*/ "0.1.0";
+	public static final String MOD_VERSION = /*$ mod_version*/ "0.1.0-alpha";
 	public static final String MOD_FRIENDLY_NAME = /*$ mod_name*/ "Fletched!";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
