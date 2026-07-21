@@ -2,7 +2,7 @@ package com.github.pigsteel.fletched.platform.neoforge;
 
 //? neoforge {
 
-/*import com.github.pigsteel.fletched.Fletched;
+import com.github.pigsteel.fletched.Fletched;
 import com.github.pigsteel.fletched.world.item.CreativeModeTabModification;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
@@ -22,4 +22,4 @@ public class NeoforgeEntrypoint {
 		eventBus.addListener(CreativeModeTabModification::modifyCreativeTabs);
 	}
 }
-*///?}
+//?}

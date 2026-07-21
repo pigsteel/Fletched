@@ -1,6 +1,7 @@
 package com.github.pigsteel.fletched.mixin.client;
 
 import net.minecraft.client.renderer.entity.player.AvatarRenderer;
+import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -12,7 +13,6 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(AvatarRenderer.class)
 public class AvatarRendererMixin {
-	//? fabric {
 	@Redirect(
 			method = "getArmPose(Lnet/minecraft/world/entity/Avatar;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/client/model/HumanoidModel$ArmPose;",
 			at = @At(
@@ -31,9 +31,10 @@ public class AvatarRendererMixin {
 	) {
 		if (expectedItem == Items.CROSSBOW) {
 			return stack.getItem() instanceof CrossbowItem;
+		} else if (expectedItem == Items.BOW) {
+			return stack.getItem() instanceof BowItem;
 		}
 
 		return stack.is(expectedItem);
 	}
-	//?}
 }

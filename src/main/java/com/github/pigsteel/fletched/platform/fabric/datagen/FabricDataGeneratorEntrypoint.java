@@ -1,7 +1,7 @@
 package com.github.pigsteel.fletched.platform.fabric.datagen;
 
 //? fabric {
-import com.github.pigsteel.fletched.platform.fabric.datagen.model.ENUSLangProvider;
+/*import com.github.pigsteel.fletched.platform.fabric.datagen.model.ENUSLangProvider;
 import com.github.pigsteel.fletched.platform.fabric.datagen.model.FabricItemModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -26,4 +26,4 @@ public class FabricDataGeneratorEntrypoint implements DataGeneratorEntrypoint {
 	}
 
 }
-//?}
+*///?}

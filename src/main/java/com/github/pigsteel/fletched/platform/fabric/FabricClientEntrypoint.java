@@ -2,7 +2,7 @@ package com.github.pigsteel.fletched.platform.fabric;
 
 //? fabric {
 
-import com.github.pigsteel.fletched.Fletched;
+/*import com.github.pigsteel.fletched.Fletched;
 import dev.kikugie.fletching_table.annotation.fabric.Entrypoint;
 import net.fabricmc.api.ClientModInitializer;
 
@@ -15,4 +15,4 @@ public class FabricClientEntrypoint implements ClientModInitializer {
 	}
 
 }
-//?}
+*///?}

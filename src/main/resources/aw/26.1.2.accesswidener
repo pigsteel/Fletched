@@ -1,1 +1,8 @@
 classTweaker v2 official
+
+accessible field net/minecraft/world/item/CrossbowItem startSoundPlayed Z
+accessible field net/minecraft/world/item/CrossbowItem midLoadSoundPlayed Z
+accessible method net/minecraft/world/item/CrossbowItem getChargingSounds (Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/CrossbowItem$ChargingSounds;
+accessible method net/minecraft/world/item/CrossbowItem tryLoadProjectiles (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;)Z
+
+extend-enum  net/minecraft/world/inventory/RecipeBookType  FLETCHED_FLETCHING

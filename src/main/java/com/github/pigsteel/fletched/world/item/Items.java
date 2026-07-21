@@ -10,17 +10,17 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.ChargedProjectiles;
 //? neoforge {
-/*import net.neoforged.neoforge.registries.DeferredRegister;
-*///?}
+import net.neoforged.neoforge.registries.DeferredRegister;
+//?}
 
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class Items {
 	//? neoforge {
-	/*// OUR NEOFORGE REGISTRY
+	// OUR NEOFORGE REGISTRY
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Fletched.MOD_ID);
-	*///?}
+	//?}
 
 	public static final Supplier<Item> LONGBOW;
 	public static final Supplier<Item> SHORTBOW;
@@ -30,30 +30,30 @@ public class Items {
 	// Replacing registryHandle with Supplier because I'm not sure what the id is used for
 	public static <T extends Item> Supplier<T> registerItem(String name, Function<Item.Properties, T> itemFactory) {
 		//? neoforge {
-		/*return ITEMS.registerItem(
+		return ITEMS.registerItem(
 				name,
 				itemFactory
 		);
-		*///?} fabric {
-		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Fletched.id(name));
+		//?} fabric {
+		/*ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Fletched.id(name));
 		Identifier id = key.identifier();
 		T registered = Registry.register(BuiltInRegistries.ITEM, id, itemFactory.apply(new Item.Properties().setId(key)));
 		return () -> registered;
-		//?}
+		*///?}
 	}
 
 	static {
 		LONGBOW = registerItem(
 				"longbow",
-				properties -> new LongbowItem(properties.stacksTo(1).durability(384))
+				properties -> new LongbowItem(properties.stacksTo(1).durability(384).enchantable(1))
 		);
 		SHORTBOW = registerItem(
 				"shortbow",
-				properties -> new ShortbowItem(properties.stacksTo(1).durability(256))
+				properties -> new ShortbowItem(properties.stacksTo(1).durability(256).enchantable(1))
 		);
 		HEAVY_CROSSBOW = registerItem(
 				"heavy_crossbow",
-				properties -> new HeavyCrossbowItem(properties.stacksTo(1).durability(600).component(DataComponents.CHARGED_PROJECTILES, ChargedProjectiles.EMPTY))
+				properties -> new HeavyCrossbowItem(properties.stacksTo(1).durability(600).component(DataComponents.CHARGED_PROJECTILES, ChargedProjectiles.EMPTY).enchantable(1))
 		);
 		DUELING_CROSSBOW = registerItem(
 				"dueling_crossbow",

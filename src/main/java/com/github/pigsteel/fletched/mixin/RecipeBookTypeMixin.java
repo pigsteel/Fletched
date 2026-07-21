@@ -5,14 +5,14 @@ import net.minecraft.world.inventory.RecipeBookType;
 import org.spongepowered.asm.mixin.Mixin;
 
 //? fabric {
-@Mixin(RecipeBookType.class)
+/*@Mixin(RecipeBookType.class)
 enum RecipeBookTypeMixin {
 	FLETCHED_FLETCHING
 }
-//?} neoforge {
-/*// Fakeout
+*///?} neoforge {
+// Fakeout
 @Mixin(Fletched.class)
 public class RecipeBookTypeMixin {
 
 }
-*///?}
+//?}

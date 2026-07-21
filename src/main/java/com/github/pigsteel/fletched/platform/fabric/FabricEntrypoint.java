@@ -2,7 +2,7 @@ package com.github.pigsteel.fletched.platform.fabric;
 
 //? fabric {
 
-import com.github.pigsteel.fletched.Fletched;
+/*import com.github.pigsteel.fletched.Fletched;
 import com.github.pigsteel.fletched.world.item.CreativeModeTabModification;
 import dev.kikugie.fletching_table.annotation.fabric.Entrypoint;
 import net.fabricmc.api.ModInitializer;
@@ -17,4 +17,4 @@ public class FabricEntrypoint implements ModInitializer {
 		CreativeModeTabModification.modifyCreativeTabs();
 	}
 }
-//?}
+*///?}

@@ -48,7 +48,7 @@ public abstract class AbstractClientPlayerMixin {
     }
 
 	@ModifyExpressionValue(
-			method = "Lnet/minecraft/client/player/AbstractClientPlayer;getFieldOfViewModifier(ZF)F",
+			method = "getFieldOfViewModifier(ZF)F",
 			at = @At(
 					value = "INVOKE",
 					target = "Lnet/minecraft/util/Mth;square(F)F"

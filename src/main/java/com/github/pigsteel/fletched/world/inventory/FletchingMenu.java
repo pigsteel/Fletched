@@ -34,10 +34,10 @@ public class FletchingMenu extends RecipeBookMenu {
 	@Override
 	public RecipeBookType getRecipeBookType() {
 		//? neoforge {
-		/*return RecipeBookType.valueOf("FLETCHED_FLETCHING");
-		*///?} fabric {
-		return RecipeBookType.FLETCHED_FLETCHING;
-		//?}
+		return RecipeBookType.valueOf("FLETCHED_FLETCHING");
+		//?} fabric {
+		/*return RecipeBookType.FLETCHED_FLETCHING;
+		*///?}
 	}
 
 	@Override

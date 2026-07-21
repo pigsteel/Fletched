@@ -8,10 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 //? fabric {
-import com.github.pigsteel.fletched.platform.fabric.FabricPlatform;
-//?} neoforge {
-/*import com.github.pigsteel.fletched.platform.neoforge.NeoforgePlatform;
- *///?}
+/*import com.github.pigsteel.fletched.platform.fabric.FabricPlatform;
+*///?} neoforge {
+import com.github.pigsteel.fletched.platform.neoforge.NeoforgePlatform;
+ //?}
 
 @SuppressWarnings("LoggingSimilarMessage")
 public class Fletched {
@@ -40,10 +40,10 @@ public class Fletched {
 
 	private static Platform createPlatformInstance() {
 		//? fabric {
-		return new FabricPlatform();
-		//?} neoforge {
-		/*return new NeoforgePlatform();
-		*///?}
+		/*return new FabricPlatform();
+		*///?} neoforge {
+		return new NeoforgePlatform();
+		//?}
 	}
 
 	public static Identifier id(String path) {

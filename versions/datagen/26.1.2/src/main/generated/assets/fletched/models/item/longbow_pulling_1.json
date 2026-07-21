@@ -1,0 +1,6 @@
+{
+  "parent": "fletched:item/longbow",
+  "textures": {
+    "layer0": "fletched:item/longbow_pulling_1"
+  }
+}

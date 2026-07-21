@@ -1,13 +1,13 @@
 package com.github.pigsteel.fletched.world.item;
 //? neoforge {
-/*import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-*///?} fabric {
-import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+//?} fabric {
+/*import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.event.Event;
-//?}
+*///?}
 
 import static net.minecraft.world.item.Items.*;
 import static com.github.pigsteel.fletched.world.item.Items.*;
@@ -15,7 +15,7 @@ import static net.minecraft.world.item.CreativeModeTabs.*;
 
 public final class CreativeModeTabModification {
 	//? neoforge {
-	/*@SubscribeEvent
+	@SubscribeEvent
 	public static void modifyCreativeTabs(BuildCreativeModeTabContentsEvent event) {
 		if (event.getTabKey() != COMBAT) {
 			return;
@@ -23,24 +23,24 @@ public final class CreativeModeTabModification {
 
 		event.insertBefore(
 				BOW.getDefaultInstance(),
-				new ItemStack(SHORTBOW.get()),
+				SHORTBOW.get().getDefaultInstance(),
 				CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
 		);
 
 		event.insertAfter(
 				BOW.getDefaultInstance(),
-				new ItemStack(LONGBOW.get()),
+				LONGBOW.get().getDefaultInstance(),
 				CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
 		);
 
 		event.insertAfter(
 				CROSSBOW.getDefaultInstance(),
-				HEAVY_CROSSBOW.get(),
+				HEAVY_CROSSBOW.get().getDefaultInstance(),
 				CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
 		);
 	}
-	*///?} fabric {
-	public static void modifyCreativeTabs() {
+	//?} fabric {
+	/*public static void modifyCreativeTabs() {
 		Event<CreativeModeTabEvents.ModifyOutput> event = CreativeModeTabEvents.modifyOutputEvent(net.minecraft.world.item.CreativeModeTabs.COMBAT);
 		event.register(
 				entries -> {
@@ -49,5 +49,5 @@ public final class CreativeModeTabModification {
 					entries.insertAfter(CROSSBOW, HEAVY_CROSSBOW.get());
 				});
 	}
-	//?}
+	*///?}
 }

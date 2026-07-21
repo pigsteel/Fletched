@@ -1,7 +1,7 @@
 package com.github.pigsteel.fletched.platform.fabric.datagen.model;
 
 //? fabric {
-import com.github.pigsteel.fletched.world.item.Items;
+/*import com.github.pigsteel.fletched.world.item.Items;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
@@ -20,4 +20,4 @@ public class ENUSLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(Items.HEAVY_CROSSBOW.get(), "Heavy Crossbow");
 	}
 }
-//?}
+*///?}

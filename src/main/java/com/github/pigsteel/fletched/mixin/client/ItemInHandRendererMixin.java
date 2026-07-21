@@ -5,6 +5,7 @@ import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.ItemInHandRenderer;
+import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -22,6 +23,7 @@ public abstract class ItemInHandRendererMixin {
 	@Final
 	private Minecraft minecraft;
 
+	//? >= 26.2 {
 	@ModifyExpressionValue(
 			method = "submitArmWithItem(Lnet/minecraft/client/player/AbstractClientPlayer;FFLnet/minecraft/world/InteractionHand;FLnet/minecraft/world/item/ItemStack;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;I)V",
 			at = @At(
@@ -29,6 +31,15 @@ public abstract class ItemInHandRendererMixin {
 					args = "floatValue=20.0"
 			)
 	)
+	//?} < 26.2 {
+	/*@ModifyExpressionValue(
+			method = "renderArmWithItem",
+			at = @At(
+					value = "CONSTANT",
+					args = "floatValue=20.0"
+			)
+	)
+	*///?}
 	private float fletched$modifyBowDrawDuration(float originalDuration) {
 		LocalPlayer player = this.minecraft.player;
 		assert player != null;
@@ -45,7 +56,6 @@ public abstract class ItemInHandRendererMixin {
 		return originalDuration;
 	}
 
-	//? fabric {
 	@Redirect(
 			method = {
 					"evaluateWhichHandsToRender",
@@ -63,8 +73,13 @@ public abstract class ItemInHandRendererMixin {
 		return fletched$recognizeCrossbowItems(instance, (Item) o);
 	}
 
-	@Redirect(
-			method = "submitArmWithItem",
+	//? fabric {
+	/*@Redirect(
+			//? >= 26.2 {
+			/^method = "submitArmWithItem",
+			^///?} < 26.2 {
+			method = "renderArmWithItem",
+			//?}
 			at = @At(
 					value = "INVOKE",
 					target = "Lnet/minecraft/world/item/ItemStack;is(Ljava/lang/Object;)Z"
@@ -75,6 +90,7 @@ public abstract class ItemInHandRendererMixin {
 	) {
 		return fletched$recognizeCrossbowItems(instance, (Item) o);
 	}
+	*///?}
 
 	@Unique
 	private static boolean fletched$recognizeCrossbowItems(
@@ -83,9 +99,10 @@ public abstract class ItemInHandRendererMixin {
 	) {
 		if (expectedItem == Items.CROSSBOW) {
 			return stack.getItem() instanceof CrossbowItem;
+		} else if (expectedItem == Items.BOW) {
+			return stack.getItem() instanceof BowItem;
 		}
 
 		return stack.is(expectedItem);
 	}
-	//?}
 }

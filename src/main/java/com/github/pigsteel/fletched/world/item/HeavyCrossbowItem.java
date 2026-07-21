@@ -1,7 +1,11 @@
 package com.github.pigsteel.fletched.world.item;
 
 import com.github.pigsteel.fletched.Fletched;
+//? < 26.2 {
+/*import net.minecraft.advancements.CriteriaTriggers;
+*///?} >= 26.2 {
 import net.minecraft.advancements.triggers.CriteriaTriggers;
+//?}
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;

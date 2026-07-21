@@ -17,7 +17,7 @@ mod.discord_url = "https://discord.gg/ZECxBsZ9x7"
 [[mod.pom.developers]]
 id = "pigsteel"
 name = "pigsteel"
-url = "https://github.com/ghost"
+url = "https://github.com/pigsteel"
 
 [fabric]
 # https://fabricmc.net/develop/
